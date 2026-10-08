@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-005",
+      "resource": {
+        "resourceType": "Patient",
+        "identifier": [{ "system": "http://hospital.smarthealthit.org", "value": "UR005" }],
+        "name": [{ "family": "Davis", "given": ["Mary", "Elizabeth"] }],
+        "gender": "female",
+        "birthDate": "1950-06-14"
+      },
+      "request": { "method": "POST", "url": "Patient" }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-005",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "code": { "coding": [{ "system": "http://snomed.info/sct", "code": "48694002", "display": "Anxiety disorder" }] },
+        "subject": { "reference": "urn:uuid:patient-005" },
+        "onsetDateTime": "2024-01-10",
+        "note": [{ "text": "Moderate anxiety affecting mobility confidence." }]
+      },
+      "request": { "method": "POST", "url": "Condition" }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-005",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "72133-2", "display": "Abbreviated Mental Test Score" }] },
+        "subject": { "reference": "urn:uuid:patient-005" },
+        "valueInteger": 8,
+        "interpretation": [{ "text": "AMTS mildly impaired - 8/10" }]
+      },
+      "request": { "method": "POST", "url": "Observation" }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-005",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "active",
+        "medicationCodeableConcept": { "text": "Sertraline 50mg, Atorvastatin 20mg" },
+        "subject": { "reference": "urn:uuid:patient-005" }
+      },
+      "request": { "method": "POST", "url": "MedicationStatement" }
+    },
+    {
+      "fullUrl": "urn:uuid:immunization-005",
+      "resource": {
+        "resourceType": "Immunization",
+        "status": "completed",
+        "vaccineCode": { "text": "Influenza vaccine" },
+        "patient": { "reference": "urn:uuid:patient-005" },
+        "occurrenceDateTime": "2025-03-20"
+      },
+      "request": { "method": "POST", "url": "Immunization" }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-006",
+      "resource": {
+        "resourceType": "Patient",
+        "identifier": [{ "system": "http://hospital.smarthealthit.org", "value": "UR006" }],
+        "name": [{ "family": "Johnson", "given": ["Michael", "David"] }],
+        "gender": "male",
+        "birthDate": "1958-02-28"
+      },
+      "request": { "method": "POST", "url": "Patient" }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-006",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "resolved" }] },
+        "code": { "coding": [{ "system": "http://snomed.info/sct", "code": "44054006", "display": "Type 2 diabetes mellitus" }] },
+        "subject": { "reference": "urn:uuid:patient-006" },
+        "onsetDateTime": "2022-05-15",
+        "note": [{ "text": "Well-controlled diabetes, active lifestyle, no falls history." }]
+      },
+      "request": { "method": "POST", "url": "Condition" }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-006",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "72133-2", "display": "Abbreviated Mental Test Score" }] },
+        "subject": { "reference": "urn:uuid:patient-006" },
+        "valueInteger": 10,
+        "interpretation": [{ "text": "AMTS intact - 10/10" }]
+      },
+      "request": { "method": "POST", "url": "Observation" }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-006",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "active",
+        "medicationCodeableConcept": { "text": "Metformin 1000mg, Vitamin D3 1000IU" },
+        "subject": { "reference": "urn:uuid:patient-006" }
+      },
+      "request": { "method": "POST", "url": "MedicationStatement" }
+    },
+    {
+      "fullUrl": "urn:uuid:immunization-006",
+      "resource": {
+        "resourceType": "Immunization",
+        "status": "completed",
+        "vaccineCode": { "text": "COVID-19 vaccine" },
+        "patient": { "reference": "urn:uuid:patient-006" },
+        "occurrenceDateTime": "2025-01-12"
+      },
+      "request": { "method": "POST", "url": "Immunization" }
+    }
+  ]
+}

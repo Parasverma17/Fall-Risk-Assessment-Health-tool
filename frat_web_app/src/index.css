@@ -1,0 +1,1718 @@
+/* =========================================================
+   GLOBAL RESET — removes default browser margins and padding
+   ========================================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal scrollbars */
+  background-color: #fff; /* optional: match your base background */
+}
+
+/* Ensure all pages start at the top with no gaps */
+#root, main, .container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Navbar sits flush to top of the page */
+.topbar,
+.navbar,
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Page-specific sections (Assessment, Results, AI Care Plan) */
+.assessment-page,
+.results-page,
+.careplan-page {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+
+/* =========================================================
+   FRAT – Health Tech Pink Theme
+   Bright pink accents + modern white cards
+   ========================================================= */
+
+:root {
+  /* Brand Colors */
+  --primary-900: #880e4f;
+  --primary-700: #ad1457;
+  --primary-500: #c2185b;
+  --primary-300: #ec407a;
+  --primary-100: #fde4ec;
+
+  --accent-500: #f06292;
+  --accent-300: #ff94c2;
+
+  /* Text */
+  --text-dark: #222;
+  --text-muted: #555;
+  --text-light: #fff;
+
+  /* Backgrounds */
+  --bg: #fff;
+  --surface: #fff;
+  --surface-alt: #fff7fa;
+  --border: #f3d4e0;
+
+  /* Effects */
+  --shadow: 0 4px 20px rgba(0,0,0,0.05);
+  --ring: 0 0 0 3px rgba(240,98,146,0.4);
+
+  /* Layout */
+  --nav-height: 72px;
+  --footer-height: 90px;
+}
+
+/* ---------- Base ---------- */
+html, body {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  color: var(--primary-900);
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: clamp(1.8rem, 1rem + 2vw, 2.6rem);
+}
+h2 {
+  font-size: clamp(1.4rem, 1rem + 1vw, 1.8rem);
+}
+p {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+/* ---------- Navbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-900));
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.topbar__brand {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.topbar__link {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.topbar__link:hover {
+  color: var(--accent-300);
+  transform: translateY(-1px);
+}
+.topbar__link:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, #fff5f8, #ffffff);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero h1 {
+  color: var(--text-dark);
+}
+.hero .accent {
+  color: var(--accent-500);
+}
+.hero__lead {
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 1rem;
+}
+.hero__cta {
+  margin-top: 1.2rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  background: var(--accent-500);
+  color: var(--text-light);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 14px rgba(240, 98, 146, 0.3);
+}
+.btn:hover {
+  background: var(--primary-500);
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Cards ---------- */
+.actions-cards {
+  padding: 3rem 1rem;
+  background: var(--surface);
+}
+.cards {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(240,98,146,0.15);
+}
+.card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 16px;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-size: 28px;
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+.section__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Contact ---------- */
+.contact-block {
+  padding: 4rem 1.5rem 6rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.contact-inner {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+}
+.contact-list li {
+  margin: 6px 0;
+}
+
+/* ---------- Footer ---------- */
+/* App container - CSS Grid layout */
+.app-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /* Content grows, footer stays at bottom */
+}
+
+/* Main content area - will expand to fill available space */
+.main-content {
+  /* This will take up all available space above the footer */
+  min-height: 0;
+  /* Allows content to shrink if needed */
+}
+
+
+/* Footer styles - always at bottom */
+footer,
+.footer {
+  /* Footer area - will always be at bottom */
+  background-color: #7a113b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Remove any conflicting positioning */
+footer {
+  position: static;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  margin-top: 0;
+}
+
+/* Ensure pages don't have conflicting heights */
+.page-wrapper,
+.container {
+  min-height: auto;
+  /* Remove any min-height that might conflict */
+}
+
+/* ---------- Responsiveness ---------- */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+  .topbar__nav {
+    margin-top: 0.5rem;
+    gap: 1.2rem;
+  }
+}
+
+/* ===== NAVBAR ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: linear-gradient(90deg, #b5124b, #d6336c);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand (FRAT) — now same color as nav links */
+.topbar__brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  background: none; /* removes grey box */
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+/* Navbar Links */
+.topbar__nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.topbar__link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.topbar__link:hover,
+.topbar__link:focus {
+  color: #ffe3f1; /* lighter pink on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== FOOTER (page-level) ===== */
+footer {
+  background: #a31143; /* Deep pink (less dark, better contrast) */
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer strong {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+footer p {
+  margin: 0.25rem 0;
+  color: #fff9fc; /* Slightly lighter for softer tone */
+}
+
+footer a {
+  color: #ffe0ec;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer small {
+  color: #ffd9e8; /* Subtle secondary info like copyright */
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   Testimonials (Results)
+   ========================= */
+.section.testimony {
+  padding: clamp(48px, 6vw, 80px) 16px;
+  background: linear-gradient(180deg, #fff0f5 0%, #ffffff 60%);
+  text-align: center;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: clamp(1.6rem, 1.1rem + 1.2vw, 2rem);
+  color: #941a4d; /* deep pink to match your theme */
+  margin: 0 0 12px;
+}
+
+.section-subtitle {
+  color: #4b5563;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* Stacked hero cards (the big tilted photos) */
+.testimony-stack {
+  position: relative;
+  height: min(52vh, 520px);
+  max-height: 520px;
+  margin: 40px auto 40px;
+  max-width: 1100px;
+  perspective: 1200px;
+}
+
+.stack-card {
+  position: absolute;
+  width: min(680px, 78%);
+  max-width: 680px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  transition: transform 350ms ease, box-shadow 350ms ease, filter 300ms ease;
+}
+
+.stack-card img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Center (front) */
+.card-center {
+  top: 4%;
+  z-index: 3;
+  transform: translateX(-50%) rotate(-2deg) translateZ(0);
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+/* Left (behind) */
+.card-left {
+  top: 10%;
+  z-index: 2;
+  transform: translateX(calc(-50% - 220px)) rotate(-8deg);
+  filter: saturate(0.92);
+}
+
+/* Right (behind) */
+.card-right {
+  top: 12%;
+  z-index: 1;
+  transform: translateX(calc(-50% + 240px)) rotate(7deg);
+  filter: saturate(0.92);
+}
+
+/* Hover lift for desktops */
+@media (hover: hover) and (pointer: fine) {
+  .stack-card:hover {
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
+    filter: none;
+  }
+}
+
+/* Gentle bob on the front card */
+@keyframes floatUp {
+  0%, 100% { transform: translateX(-50%) rotate(-2deg) translateY(0); }
+  50%      { transform: translateX(-50%) rotate(-2deg) translateY(-8px); }
+}
+
+/* Responsive: hide the big stack on narrow screens */
+@media (max-width: 900px) {
+  .testimony-stack { display: none; }
+}
+
+/* Quote cards list */
+.testimony-grid {
+  margin: 48px auto 0;
+  max-width: 1300px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+  .testimony-grid { 
+    gap: 20px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimony-grid { 
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimony-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 12px;
+    justify-content: flex-start;
+  }
+  .testimony-grid::-webkit-scrollbar { height: 6px; }
+  .testimony-grid::-webkit-scrollbar-thumb {
+    background: rgba(148, 26, 77, 0.4);
+    border-radius: 12px;
+  }
+  
+  .testimonial {
+    width: 300px;
+  }
+}
+
+.testimonial {
+  background: #ffffff;
+  border: 1px solid rgba(148, 26, 77, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, .1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.testimonial-media {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.testimonial-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.testimonial-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* ✅ Darker quote text for readability (was too light) */
+.testimonial blockquote {
+  margin: 0;
+  color: #374151; /* readable neutral */
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial blockquote p {
+  margin: 0;
+}
+
+/* =====================
+   ✅ Accessible footer bar
+   ===================== */
+.testimonial footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: #7a113b;   /* medical maroon */
+  color: #ffe8f2;         /* readable light text */
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ✅ Name & Role colors (high contrast) */
+.testimonial footer strong {
+  color: #ffffff;          /* pure white for names */
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.testimonial footer span {
+  color: #ffd6e6;          /* soft pink for roles */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Assessment page layout & readability
+   ========================================= */
+
+.assessment-page {
+  min-height: calc(100vh - var(--footer-height));
+  padding: 24px 16px calc(24px + var(--footer-height));
+  background: linear-gradient(180deg, #fff 0%, #fde7f0 80%);
+}
+
+.assessment-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.assessment-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.assessment-header h1 {
+  margin: 0 0 6px 0;
+  font-weight: 800;
+  color: #7a113b;
+  letter-spacing: .2px;
+}
+.assessment-step {
+  margin: 0;
+  color: #6b7280;
+  font-weight: 600;
+}
+.assessment-subtitle {
+  margin: 4px 0 0 0;
+  color: #9a1d50;
+  font-weight: 700;
+}
+
+.assessment-card {
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(122, 17, 59, .08);
+  padding: 22px 22px 18px;
+}
+
+.assessment-group {
+  padding: 14px 0;
+  border-top: 1px solid rgba(122, 17, 59, 0.12);
+}
+.assessment-group:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+.assessment-group h3,
+.assessment-group legend {
+  margin: 0 0 8px 0;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.assessment-options {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.assessment-options li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border-radius: 8px;
+}
+.assessment-options input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #c41d63;
+}
+
+.assessment-score {
+  display: inline-block;
+  margin: 10px 0 2px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fde7f0;
+  color: #7a113b;
+  font-weight: 800;
+}
+
+.assessment-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.assessment-actions .btn {
+  appearance: none;
+  border: 1px solid rgba(122, 17, 59, .2);
+  background: #fff;
+  color: #7a113b;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: box-shadow .2s ease, transform .06s ease, background .15s ease;
+}
+.assessment-actions .btn:hover {
+  box-shadow: 0 8px 18px rgba(122, 17, 59, .12);
+}
+.assessment-actions .btn:active {
+  transform: translateY(1px);
+}
+.assessment-actions .btn-primary {
+  background: #c41d63;
+  color: #fff;
+  border-color: #a4154e;
+}
+.assessment-actions .btn-primary:hover {
+  box-shadow: 0 10px 22px rgba(196, 29, 99, .24);
+}
+
+/* Assessment validation error */
+.assessment-error {
+  background-color: #fee2e2;
+  border: 2px solid #fca5a5;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  color: #991b1b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+
+/* ---------- Footer ---------- */
+.footer {
+  position: static;             /* not fixed anymore */
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+  background: var(--primary-900);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: none;             /* remove sticky-style shadow */
+  padding: 1.5rem 1rem;
+}
+
+.footer a {
+  color: var(--accent-300);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--text-light);
+}
+
+/* ===== FOOTER (page-level) ===== */
+footer {
+  position: static;             /* ✅ ensure page-level footer scrolls normally */
+  background: #a31143;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: none;             /* ✅ removed fixed shadow */
+}
+
+footer strong {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+footer p {
+  margin: 0.25rem 0;
+  color: #fff9fc;
+}
+
+footer a {
+  color: #ffe0ec;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer small {
+  color: #ffd9e8;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   Assessment page layout & readability
+   ========================================= */
+.assessment-page {
+  min-height: auto;              /* ✅ allow footer to sit naturally below content */
+  padding: 24px 16px;            /* ✅ remove bottom padding used for fixed footer */
+  background: linear-gradient(180deg, #fff 0%, #fde7f0 80%);
+}
+
+
+/* ===== Testimonial hero images — clearer separation ===== */
+.testimony-stack {
+  position: relative;
+  height: min(42vh, 420px);         /* slightly shorter than before */
+  max-height: 420px;
+  margin: 24px auto 90px;           /* more space below so it never touches the cards */
+  max-width: 1200px;                /* give room to spread out */
+  perspective: 1200px;
+  align-items: center;
+  align-content: center;
+  right: 4%;
+}
+
+/* Base style for each hero card */
+.stack-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.25);
+  transition: transform 350ms ease, box-shadow 350ms ease, filter 300ms ease, opacity 300ms ease;
+}
+
+/* Make the side images a bit narrower so all three are visible */
+.card-left,
+.card-right {
+  width: min(520px, 46vw);
+  max-width: 560px;
+  height: 360px;
+}
+
+/* Center image slightly wider to remain the hero */
+.card-center {
+  width: min(640px, 54vw);
+  max-width: 680px;
+  height: 380px;
+  top: 4%;
+  z-index: 3;
+  transform: translateX(-50%) rotate(-2deg);
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+/* Left image farther left, smaller rotation, slightly behind */
+.card-left {
+  top: 12%;
+  z-index: 2;
+  transform: translateX(calc(-50% - 360px)) rotate(-6deg) scale(0.96);
+  filter: saturate(0.98);
+  opacity: 0.98;
+}
+
+/* Right image farther right, smaller rotation, slightly behind */
+.card-right {
+  top: 14%;
+  z-index: 1;
+  transform: translateX(calc(-50% + 360px)) rotate(6deg) scale(0.96);
+  filter: saturate(0.98);
+  opacity: 0.98;
+}
+
+.stack-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Desktop hover: subtle lift (optional) */
+@media (hover: hover) and (pointer: fine) {
+  .stack-card:hover {
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
+    filter: none;
+    opacity: 1;
+  }
+}
+
+/* Keep it clean on narrower screens */
+@keyframes floatUp {
+  0%, 100% { transform: translateX(-50%) rotate(-2deg) translateY(0); }
+  50%      { transform: translateX(-50%) rotate(-2deg) translateY(-8px); }
+}
+
+@media (max-width: 1100px) {
+  .card-left {
+    transform: translateX(calc(-50% - 300px)) rotate(-5deg) scale(0.96);
+  }
+  .card-right {
+    transform: translateX(calc(-50% + 300px)) rotate(5deg) scale(0.96);
+  }
+}
+
+@media (max-width: 900px) {
+  /* On small screens, the stack is often too cramped; hide it gracefully */
+  .testimony-stack { display: none; }
+}
+
+
+
+/* ======================
+   Centered Loader Overlay
+   ====================== */
+
+.loader-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.7);         /* light blur/veil */
+  backdrop-filter: blur(2px);
+  z-index: 2500;                                 /* above navbar/cards */
+}
+
+.loader-card {
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.15);
+  border-radius: 14px;
+  padding: 20px 26px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 240px;
+}
+
+.loader-spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid #f3d4e0;                    /* light track */
+  border-top-color: #c2185b;                     /* theme pink */
+  animation: loader-spin 0.9s linear infinite;
+}
+
+.loader-text {
+  margin: 0;
+  font-weight: 800;
+  color: #7a113b;                                /* medical maroon */
+  letter-spacing: .2px;
+}
+
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+/* =========================
+   Patient Info Page Layout
+   ========================= */
+.patient-page {
+  padding: 24px 16px 40px;
+  background: linear-gradient(180deg, #fff 0%, #fff7fa 80%);
+}
+
+.page-header {
+  max-width: 1000px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+.page-header h2 {
+  margin: 0 0 8px;
+  color: #7a113b;
+}
+.amts-pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fde7f0;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.patient-shell {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.patient-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.1fr 1fr;
+}
+@media (max-width: 840px) {
+  .patient-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card styling for patient info sections */
+.pi-card {
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+  padding: 18px 20px;
+}
+.pi-card h3 {
+  margin: 0 0 10px;
+  color: #7a113b;
+  font-weight: 800;
+}
+
+/* Info table for demographics */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.info-table td {
+  padding: 6px 8px;
+  color: #374151;
+  vertical-align: top;
+}
+.info-table td:first-child {
+  width: 180px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Lists inside cards */
+.pi-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #374151;
+}
+.pi-list li { margin: 4px 0; }
+
+/* Actions row aligned to the right */
+.patient-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+
+
+/* =========================
+   Patient page: action card
+   ========================= */
+.card-actions {
+  /* card look */
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+
+  /* layout */
+  max-width: 520px;       /* keeps it compact and centered */
+  margin: 20px auto 40px; /* nice space above & below */
+  padding: 16px;
+
+  /* equal buttons, centered */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.card-actions .btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+/* Ghost/secondary button for Back */
+.btn-ghost {
+  background: #fff;
+  color: #7a113b;
+  border: 1px solid rgba(122, 17, 59, .2);
+  box-shadow: none;
+}
+.btn-ghost:hover {
+  box-shadow: 0 8px 18px rgba(122, 17, 59, .12);
+}
+
+/* Mobile: stack buttons full width */
+@media (max-width: 520px) {
+  .card-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+    margin: 16px auto 32px;
+  }
+}
+
+/* Visuals row (Pie + Metrics) */
+.results-visuals {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-top: 10px;
+}
+@media (max-width: 900px) {
+  .results-visuals { grid-template-columns: 1fr; }
+}
+
+.results-chart .chart-box {
+  background: #fff;
+  border: 1px solid rgba(154, 29, 80, 0.12);
+  border-radius: 12px;
+  padding: 8px 6px 0;
+}
+.breakdown-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #374151;
+}
+
+/* Slider-style metrics */
+.results-metrics .metric { margin-bottom: 14px; }
+.metric-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-weight: 700; color: #7a113b; margin-bottom: 4px;
+}
+.metric-val { color: #6b7280; font-weight: 700; }
+.metric-bar {
+  height: 12px; border-radius: 999px; background: #f3e0e8; overflow: hidden;
+  border: 1px solid rgba(154,29,80,0.15);
+}
+.metric-fill {
+  height: 100%; background: linear-gradient(90deg, #ec407a, #7a113b);
+  border-right: 1px solid rgba(255,255,255,0.7);
+  transition: width .5s ease;
+}
+
+
+/* =========================
+   Assessment Results – Enhanced Layout with Visual Analytics
+   ========================= */
+.results-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f8 80%);
+  padding: 24px 16px 60px;
+}
+
+.results-container {
+  max-width: 1200px;
+  /* Wider to accommodate charts */
+  margin: 0 auto;
+}
+
+.results-title {
+  text-align: center;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0 0 18px;
+}
+
+.results-card {
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, .08);
+  padding: clamp(20px, 3vw, 32px);
+  /* More responsive padding */
+}
+
+/* Header score row */
+.score-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(154, 29, 80, 0.12);
+}
+
+.score-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.score-badge {
+  font-weight: 800;
+  font-size: 1rem;
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+/* Grid for charts - responsive */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 24px 0;
+}
+
+@media (max-width: 1024px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Chart containers */
+.results-chart {
+  background: #fff;
+  border: 1px solid rgba(154, 29, 80, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Sections inside the card */
+.results-section {
+  margin-top: 40px;
+}
+
+.results-section:first-child {
+  margin-top: 0;
+}
+
+.results-section__title {
+  margin: 0 0 12px;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 1.15rem;
+  border-bottom: 2px solid rgba(154, 29, 80, 0.1);
+  padding-bottom: 6px;
+}
+
+/* Enhanced table styling */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid rgba(154, 29, 80, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(154, 29, 80, 0.08);
+  color: #222;
+}
+
+.results-table thead th {
+  background: #fde7f0;
+  color: #7a113b;
+  font-weight: 800;
+  text-align: left;
+}
+
+.results-table tbody tr:hover {
+  background: rgba(154, 29, 80, 0.02);
+}
+
+.results-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Enhanced list styling */
+.results-list {
+  margin: 8px 0 0;
+  padding-left: 0;
+  list-style: none;
+  color: #374151;
+}
+
+.results-list li {
+  margin: 16px 0;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+/* Action buttons - improved layout */
+.results-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(154, 29, 80, 0.12);
+  flex-wrap: wrap;
+}
+
+.results-actions .btn {
+  padding: 12px 20px;
+  border: 1px solid rgba(122, 17, 59, .25);
+  border-radius: 10px;
+  background: #fff;
+  color: #7a113b;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.results-actions .btn:hover {
+  box-shadow: 0 8px 18px rgba(122, 17, 59, .12);
+  transform: translateY(-1px);
+}
+
+.results-actions .btn:active {
+  transform: translateY(0);
+}
+
+.results-actions .btn.btn-primary {
+  background: #c41d63;
+  color: #fff;
+  border-color: #a4154e;
+}
+
+.results-actions .btn.btn-primary:hover {
+  box-shadow: 0 10px 22px rgba(196, 29, 99, .24);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .results-container {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .results-card {
+    padding: 16px;
+  }
+
+  .score-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .score-value {
+    font-size: 1.5rem;
+  }
+
+  .results-actions {
+    flex-direction: column;
+  }
+
+  .results-actions .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Chart responsive heights */
+@media (max-width: 768px) {
+  .results-grid>div {
+    height: 250px !important;
+  }
+
+  .results-chart {
+    height: 300px !important;
+  }
+}
+
+/* =========================
+   AI Care Plan – boxed layout
+   ========================= */
+.careplan-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f8 80%);
+  padding: 24px 16px 60px;
+}
+
+.careplan-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.careplan-title {
+  text-align: center;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0 0 18px;
+}
+
+.careplan-card {
+  background: #ffffff;
+  border: 1px solid rgba(154,29,80,0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(17,24,39,.08);
+  padding: clamp(18px, 2.4vw, 28px);
+}
+
+/* Header */
+.careplan-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(154,29,80,0.12);
+  margin-bottom: 10px;
+}
+.careplan-meta {
+  color: #374151;
+}
+
+/* Sections */
+.careplan-section { margin-top: 12px; }
+.careplan-section__title {
+  margin: 0 0 8px;
+  color: #7a113b;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.careplan-lead {
+  margin: 0;
+  color: #4b5563;
+}
+
+/* Lists */
+.careplan-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #374151;
+}
+.careplan-list li { margin: 6px 0; }
+
+/* Actions row */
+.careplan-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.careplan-actions .btn {
+  padding: 10px 16px;
+  border: 1px solid rgba(122,17,59,.25);
+  border-radius: 10px;
+  background: #fff;
+  color: #7a113b;
+  font-weight: 800;
+  cursor: pointer;
+  transition: box-shadow .2s ease, transform .06s ease, background .15s ease;
+}
+.careplan-actions .btn:hover { box-shadow: 0 8px 18px rgba(122,17,59,.12); }
+.careplan-actions .btn:active { transform: translateY(1px); }
+.careplan-actions .btn.btn-primary {
+  background: #c41d63;
+  color: #fff;
+  border-color: #a4154e;
+}
+.careplan-actions .btn.btn-primary:hover {
+  box-shadow: 0 10px 22px rgba(196,29,99,.24);
+}
+
+
+/* Footer height and alignment */
+footer {
+  background-color: #7a113b; /* your medical maroon */
+  color: white;
+  text-align: center;
+  height: 60px; /* match your navbar height here */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+/* Optional: ensure footer sits at bottom naturally (not fixed) */
+body, html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE ENHANCEMENTS (drop-in)
+   Works without changing JSX; overrides only.
+   ========================================================= */
+
+/* Fluid type + base spacing */
+html {
+  /* keeps type readable from 320px to desktop */
+  font-size: clamp(14px, 0.95vw, 16px);
+}
+
+/* Shared container sizing for all "…container" wrappers we use */
+.container,
+.hero__inner,
+.section__inner,
+.contact-inner,
+.assessment-container,
+.careplan-container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* Make all images and canvases shrink properly */
+img,
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Let charts stretch to the container width even if a fixed height was set inline */
+.charts-section canvas,
+.results-section canvas {
+  width: 100% !important;
+}
+
+/* Cards & grids behave better on narrow widths */
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Tables: fall back to horizontal scroll on small screens */
+.risk-factors table,
+table {
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .risk-factors table,
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+/* Buttons: bigger touch targets + full width on small */
+.btn {
+  min-height: 44px;
+}
+.actions,
+.assessment-actions,
+.cp-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .actions button,
+  .assessment-actions .btn,
+  .cp-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Sections get fluid vertical rhythm */
+.section,
+.contact-block,
+.assessment-page,
+.careplan-page,
+.charts-section {
+  padding-block: clamp(28px, 5vw, 64px);
+}
+
+/* Navbar: stack links on small screens without needing JS */
+.topbar {
+  padding-inline: clamp(16px, 4vw, 5%);
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .topbar {
+    height: auto;
+    row-gap: 8px;
+    justify-content: center;
+  }
+  .topbar__nav {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .topbar__link {
+    padding: 6px 10px;
+  }
+}
+
+/* Testimonials: add spacing so cards never collide with stacked photos */
+.section.testimony {
+  padding-top: clamp(56px, 8vw, 96px);
+}
+@media (max-width: 1024px) {
+  .testimony-stack {
+    margin-bottom: 18px;
+  }
+}
+
+/* Assessment layout: avoid cramped UI on phones */
+.assessment-card {
+  padding: clamp(16px, 3.5vw, 22px);
+}
+.assessment-options li {
+  gap: 12px;
+}
+.assessment-actions {
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .assessment-actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+}
+
+/* Results page: make blocks look like responsive cards */
+.score-section,
+.results-section,
+.breakdown,
+.risk-factors,
+.metrics,
+.recommendations {
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 80, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.06);
+  padding: clamp(14px, 3.2vw, 22px);
+  margin-block: clamp(12px, 2.4vw, 18px);
+}
+
+/* Care plan card: keep margins/padding responsive */
+.careplan-card {
+  margin-block: clamp(12px, 2.6vw, 18px);
+  padding: clamp(14px, 3.2vw, 22px);
+}
+
+/* Footer: match navbar height & spacing, stay at the bottom of content */
+:root {
+  --nav-height: 64px;   /* already used by your nav */
+  --footer-height: 64px; /* align footer height with navbar */
+}
+footer {
+  min-height: var(--footer-height);
+  display: grid;
+  place-items: center;
+  padding-block: 12px;
+}
+
+/* Small helpers for very narrow screens */
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.4rem, 4.5vw, 1.9rem); }
+  h2 { font-size: clamp(1.2rem, 4vw, 1.6rem); }
+  h3 { font-size: clamp(1.05rem, 3.6vw, 1.35rem); }
+
+  .card__icon { width: 56px; height: 56px; font-size: 24px; }
+}

@@ -1,0 +1,423 @@
+{
+    "resourceType": "Bundle",
+    "id": "ff2e8267-f126-4353-9d1c-830ab8bd7786",
+    "type": "transaction-response",
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://launch.smarthealthit.org/v/r4/fhir"
+        }
+    ],
+    "entry": [
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074731/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074732/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074733/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074734/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074735/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074736/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074737/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074738/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074739/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074740/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074741/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074742/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074743/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074744/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074745/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074746/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074747/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074748/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074749/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074750/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074751/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074752/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074753/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074754/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074755/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074756/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074757/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074758/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074759/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074760/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074761/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074762/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074763/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074764/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074765/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074766/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074767/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074768/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074769/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074770/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074771/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074772/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074773/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074774/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074775/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Patient/3074776/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Condition/3074777/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Observation/3074778/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "MedicationStatement/3074779/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        },
+        {
+            "response": {
+                "status": "201 Created",
+                "location": "Immunization/3074780/_history/1",
+                "etag": "1",
+                "lastModified": "2025-09-20T04:55:17.697-04:00"
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,237 @@
+/* ===== AI Care Plan 页面优化版 ===== */
+
+.ai-wrap {
+    background-color: #f4f5f8;
+    min-height: 100vh;
+    padding: 80px 0 60px;
+    /* 顶部和底部留白更多 */
+}
+
+/* 整体卡片容器 */
+.ai-card {
+    max-width: 1100px;
+    /* 加宽一点让内容不挤 */
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* 标题部分 */
+.ai-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ai-badge {
+    background: #a10035;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.ai-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #a10035;
+    margin-top: 12px;
+    letter-spacing: 0.6px;
+}
+
+/* 各分区 */
+.ai-section {
+    margin-bottom: 50px;
+}
+
+.ai-section h3 {
+    border-left: 5px solid #a10035;
+    padding-left: 12px;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+}
+
+/* 子内容卡片 */
+.ai-subcard {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* 信息布局网格 */
+.ai-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px 20px;
+    margin-bottom: 16px;
+}
+
+/* 表格样式 */
+.ai-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.ai-table th,
+.ai-table td {
+    border: 1px solid #e3e3e3;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.ai-table th {
+    background-color: #f6f6f6;
+    font-weight: 600;
+    color: #444;
+}
+
+.ai-table tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+
+.center {
+    text-align: center;
+}
+
+/* 模型选择部分 */
+.ai-model {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.ai-model label {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    transition: 0.25s ease;
+}
+
+.ai-model label:hover {
+    border-color: #a10035;
+    background-color: #fff9fa;
+}
+
+.ai-model input {
+    margin-right: 12px;
+}
+
+.ai-model .name {
+    font-weight: 600;
+    color: #222;
+}
+
+.ai-model .desc {
+    margin-left: 6px;
+    color: #666;
+}
+
+/* 按钮样式 */
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: #a10035;
+    color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #c81a49;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #ccc;
+}
+
+/* Action buttons container */
+.ai-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+/* 底部按钮 */
+.ai-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* 加载和错误状态 */
+.ai-loading,
+.ai-error {
+    text-align: center;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.ai-error {
+    color: #c81a49;
+}
+
+/* AI Generating State */
+.ai-generating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    min-height: 200px;
+}
+
+/* Spinner Animation */
+.ai-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #a10035;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .ai-card {
+        padding: 30px 24px;
+    }
+}

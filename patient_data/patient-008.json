@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-008",
+      "resource": {
+        "resourceType": "Patient",
+        "identifier": [{ "system": "http://hospital.smarthealthit.org", "value": "UR008" }],
+        "name": [{ "family": "Wilson", "given": ["Charles", "Edward"] }],
+        "gender": "male",
+        "birthDate": "1946-12-01"
+      },
+      "request": { "method": "POST", "url": "Patient" }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-008",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "resolved" }] },
+        "code": { "coding": [{ "system": "http://snomed.info/sct", "code": "217082002", "display": "Accidental fall" }] },
+        "subject": { "reference": "urn:uuid:patient-008" },
+        "onsetDateTime": "2025-01-20",
+        "note": [{ "text": "Fall 8 months ago, some lingering balance issues." }]
+      },
+      "request": { "method": "POST", "url": "Condition" }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-008",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "72133-2", "display": "Abbreviated Mental Test Score" }] },
+        "subject": { "reference": "urn:uuid:patient-008" },
+        "valueInteger": 6,
+        "interpretation": [{ "text": "AMTS moderately impaired - 6/10" }]
+      },
+      "request": { "method": "POST", "url": "Observation" }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-008",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "active",
+        "medicationCodeableConcept": { "text": "Lisinopril 10mg, Hydrochlorothiazide 25mg" },
+        "subject": { "reference": "urn:uuid:patient-008" }
+      },
+      "request": { "method": "POST", "url": "MedicationStatement" }
+    },
+    {
+      "fullUrl": "urn:uuid:immunization-008",
+      "resource": {
+        "resourceType": "Immunization",
+        "status": "completed",
+        "vaccineCode": { "text": "Tetanus booster" },
+        "patient": { "reference": "urn:uuid:patient-008" },
+        "occurrenceDateTime": "2024-11-18"
+      },
+      "request": { "method": "POST", "url": "Immunization" }
+    }
+  ]
+}
