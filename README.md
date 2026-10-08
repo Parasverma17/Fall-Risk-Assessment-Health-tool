@@ -1,6 +1,5 @@
 # FRAT - Falls Risk Assessment Tool
 
-**WellTech Three Team | COMP3820 Project 23 | 2025**
 
 A comprehensive web-based application for assessing fall risk in elderly patients and generating AI-powered personalized care plans.
 
